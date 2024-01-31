@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { mongo } from 'mongoose';
-import { Bookmark } from '../bookmarks-folder/bookmark.schema';
+import mongoose, { mongo } from 'mongoose';;
 import { Role } from 'src/auth/roles/role.enum';
 @Schema()
 export class User {
@@ -36,8 +35,7 @@ export class User {
 
   
 
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Bookmark' }] })
-  bookmarks: mongoose.Types.ObjectId[] | Bookmark[];
+  
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

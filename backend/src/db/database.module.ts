@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import {DatabaseService} from "./database.service"; // Import mongoose to access connection events
 import {User} from "../models/user-folder/user.schema";
 import { UserSchema } from "src/models/user-folder/user.schema";
-import { BookmarkSchema, Bookmark} from "../models/bookmarks-folder/bookmark.schema"
+
 config();
 
 @Global()
@@ -14,7 +14,7 @@ config();
   imports: [
     MongooseModule.forRoot(env.MONGODB_URL_LOCAL, {}),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-    MongooseModule.forFeature([{name: Bookmark.name, schema: BookmarkSchema}]),
+  
   ],
   exports: [DatabaseService],
   providers: [DatabaseService],
